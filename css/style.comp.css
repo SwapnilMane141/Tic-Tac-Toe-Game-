@@ -394,7 +394,6 @@ header {
         cursor: pointer; }
 
 .hidden {
-  visibility: none;
   opacity: 0;
   pointer-events: none;
   width: 0%;

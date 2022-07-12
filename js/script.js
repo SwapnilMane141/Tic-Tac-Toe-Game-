@@ -148,12 +148,12 @@ gameBlocks.forEach((element) =>
       else if (localStorage.getItem("gameWith") === "CPU") {
         if (currChance === "X" && playerSelected === "X") {
           element.innerHTML = xLogoHtml;
-          gameTurn.innerHTML = oLogoHtml;
+          gameTurn.innerHTML = oLogoHtml2;
           console.log("X Plays here");
           currChance = "O";
         } else if (currChance === "O" && playerSelected === "O") {
           element.innerHTML = oLogoHtml;
-          gameTurn.innerHTML = xLogoHtml;
+          gameTurn.innerHTML = xLogoHtml2;
           currChance = "X";
         } else if (currChance === "X" && playerSelected === "O") {
           // CPU will play
@@ -176,11 +176,11 @@ gameBlocks.forEach((element) =>
 
         if (currChance === "O") {
           randomBlock.innerHTML = oLogoHtml;
-          gameTurn.innerHTML = xLogoHtml;
+          gameTurn.innerHTML = xLogoHtml2;
           currChance = "X";
         } else if (currChance === "X") {
           randomBlock.innerHTML = xLogoHtml;
-          gameTurn.innerHTML = oLogoHtml;
+          gameTurn.innerHTML = oLogoHtml2;
           currChance = "O";
         }
 
@@ -195,12 +195,7 @@ gameBlocks.forEach((element) =>
       (element) => element.innerHTML !== ""
     );
 
-    if (isTie) {
-      tieTeam.classList.remove("hidden");
-      let tiescurrScore = Number(tiesGameScore.textContent);
-      tiescurrScore += 1;
-      tiesGameScore.textContent = tiescurrScore;
-    } else if (winner === "X") {
+    if (winner === "X") {
       let xcurrScore = Number(xGameScore.textContent);
       xcurrScore += 1;
       xGameScore.textContent = xcurrScore;
@@ -211,12 +206,14 @@ gameBlocks.forEach((element) =>
         );
         popupPlayer.textContent = "X";
         winningTeam.classList.remove("hidden");
+        return;
       } else {
         const popupPlayer = document.querySelector(
           ".losing-team__winner-text--player"
         );
         popupPlayer.textContent = "X";
         losingTeam.classList.remove("hidden");
+        return;
       }
     } else if (winner === "O") {
       let ycurrScore = Number(yGameScore.textContent);
@@ -228,13 +225,23 @@ gameBlocks.forEach((element) =>
         );
         popupPlayer.textContent = "O";
         losingTeam.classList.remove("hidden");
+        return;
       } else {
         const winnerElementPopup = document.querySelector(
           ".winning-team__winner-text--player"
         );
         winnerElementPopup.textContent = "O";
         winningTeam.classList.remove("hidden");
+        return;
       }
+    }
+
+    if (isTie) {
+      tieTeam.classList.remove("hidden");
+      let tiescurrScore = Number(tiesGameScore.textContent);
+      tiescurrScore += 1;
+      tiesGameScore.textContent = tiescurrScore;
+      return;
     }
   })
 );
