@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" type="image/icon" href="images/favicon-32x32.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100;300;400;500;600;700&display=swap" rel="stylesheet">
+    <title>Tic Tac Toe Game</title>
+    <script defer src="js/script.js"></script>
+</head>
+<body class="body">
+    <header class="header">
+        <div class="top-bar">
+            <img src="images/icon-x.svg" alt="X icon" class="icon-x">
+            <img src="images/icon-o.svg" alt="o icon" class="icon-o">
+        </div>
+        <div class="intro-box">
+            <div class="pick-players-box">
+                <div class="pick-players-text">Pick Player 1'S Mark</div>
+                <div class="pick-x-o">
+                    <img src="images/icon-x.svg" class="x-logo x-logo-selection">
+                    <div class="o-logo o-logo-selection">
+                        <img src="images/icon-o.svg" class="o-logo-img">
+                    </div>
+                </div>
+                <div class="selected-player">Selected Player: X</div>
+            </div>
+
+            <div class="new-game-btn new-game-btn--1">
+                New Game (VS CPU)
+            </div>
+            <div class="new-game-btn new-game-btn--2">
+                New Game (VS PLAYER)
+            </div>
+        </div>
+    </header>
+    <main class="main">
+
+        <div class="main-game hidden">
+            <div class="main-game__top-info">
+                <div class="x-o_logo">
+                    <img src="images/icon-x.svg" alt="X icon" class="icon-x">
+                    <img src="images/icon-o.svg" alt="o icon" class="icon-o">
+                </div>
+                <div class="game-turn">
+                    <span class="game-turn__player-x">
+                        <img src="images/icon-x.svg" alt="Icon X" class="player-x-logo">
+                    </span>
+                    <div class="game-turn__text">
+                        Turn
+                    </div>
+                </div>
+                <div class="restart-game">
+                    <img src="images/icon-restart.svg" alt="Restart Game" class="icon-restart">
+                </div>
+            </div>
+            <div class="main-game__blocks">
+                <div class="game-block game-block--1">
+                    <!-- <img src="images/icon-o.svg" alt="O Logo" class="logo-o"> -->
+                </div>
+                <div class="game-block game-block--2">
+                    <!-- <img src="images/icon-x.svg" alt="X Logo" class="logo-x"> -->
+                </div>
+                <div class="game-block game-block--3">
+                    <!-- <img src="images/icon-o.svg" alt="O Logo" class="logo-o"> -->
+                </div>
+                <div class="game-block game-block--4">
+                    <!-- <img src="images/icon-x.svg" alt="X Logo" class="logo-x"> -->
+                </div>
+                <div class="game-block game-block--5">
+                    <!-- <img src="images/icon-x.svg" alt="X Logo" class="logo-x"> -->
+                </div>
+                <div class="game-block game-block--6">
+                    <!-- <img src="images/icon-o.svg" alt="O Logo" class="logo-o"> -->
+                </div>
+                <div class="game-block game-block--7">
+                    <!-- <img src="images/icon-x.svg" alt="X Logo" class="logo-x"> -->
+                </div>
+                <div class="game-block game-block--8">
+                    <!-- <img src="images/icon-x.svg" alt="X Logo" class="logo-x"> -->
+                </div>
+                <div class="game-block game-block--9">
+                    <!-- <img src="images/icon-x.svg" alt="X Logo" class="logo-x"> -->
+                </div>
+            </div>
+            <div class="game-score">
+                <div class="game-score-player color-bg-blue">
+                    <div class="player-text">X (You)</div>
+                    <div class="player-score-num X-score">0</div>
+                </div>
+                <div class="game-score-player color-bg-grey">
+                    <div class="player-text">Ties</div>
+                    <div class="player-score-num ties-score">0</div>
+                </div>
+                <div class="game-score-player color-bg-orange">
+                    <div class="player-text">O (CPU)</div>
+                    <div class="player-score-num Y-score">0</div>
+                </div>
+            </div>
+
+            <!-- After one player wins -->
+            <div class="losing-team hidden">
+                <div class="losing-team__primary-text">Oh No, You Lost...</div>
+                <div class="losing-team__winner-text color-orange-dark">
+                    <span class="losing-team__winner-text--player">O</span>     
+                    Takes the Round
+                </div>
+                <div class="game-buttons">
+                    <div class="quit-btn">Quit</div>
+                    <div class="next-round-btn">Next Round</div>
+                </div>
+            </div>
+
+            <!-- Winning team popup -->
+            <div class="winning-team hidden">
+                <div class="winning-team__primary-text">You Won!</div>
+                <div class="winning-team__winner-text color-blue-dark">
+                    <span class="winning-team__winner-text--player">X</span> 
+                    Takes the Round
+                </div>
+                <div class="game-buttons">
+                    <div class="quit-btn">Quit</div>
+                    <div class="next-round-btn">Next Round</div>
+                </div>
+            </div>
+
+            <!-- Tie popup -->
+            <div class="tie-team hidden">
+                <div class="tie-team__primary-text">Its a Tie!</div>
+                <div class="tie-team__winner-text color-blue-dark">
+                    <!-- <span class="tie-team__winner-text--player"></span>  -->
+                    Click Next Round to continue.
+                </div>
+                <div class="game-buttons">
+                    <div class="quit-btn">Quit</div>
+                    <div class="next-round-btn">Next Round</div>
+                </div>
+            </div>
+
+            <!-- Restart Game -->
+            <div class="game-restart hidden">
+                <div class="game-restart-text">Restart Game?</div>
+    
+                <div class="game-buttons">
+                    <div class="cancel-btn">No, Cancel</div>
+                    <div class="restart-btn">Yes, Restart</div>
+                </div>
+            </div>
+
+        </div>
+    </main>
+</body>
+</html>

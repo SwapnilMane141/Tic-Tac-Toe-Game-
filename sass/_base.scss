@@ -1,0 +1,52 @@
+// Color Variables
+
+$color-primary-dark:#1A2A33;
+$color-primary-light:#1F3641;
+$color-secondary-dark:#A8BFC9;
+$color-secondary-light:#DBE8ED;
+
+$color-blue-dark:#31C3BD;
+$color-blue-light:#65E9E4;
+$color-orange-dark:#F2B137;
+$color-orange-light:#FFC860;
+
+
+// Media Queries
+
+$bp-4k:87.5em; //1400 px
+$bp-largest:75em; //1200 px
+$bp-large:68.75em; //1100 px
+$bp-medium: 56.25em; // 900 px
+$bp-small: 50em; // 800 px
+$bp-micro: 31.25em; // 500 px
+// $bp-micro: 25em; // 400 px
+
+*,
+*::before,
+*::after{
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+}
+
+
+html{
+    box-sizing: border-box;
+    font-size: 62.5%;
+    scroll-behavior: smooth;
+}
+
+body{
+    font-size: 1.6rem;
+    font-family: 'Outfit',sans-serif;
+    font-weight: 600;
+    color:$color-secondary-light;
+    background-color: $color-primary-dark;
+}
+
+
+
+
+
+
+

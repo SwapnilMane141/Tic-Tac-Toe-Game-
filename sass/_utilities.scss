@@ -1,0 +1,32 @@
+.hidden{
+    visibility: none;
+    opacity: 0;
+    pointer-events: none;
+    width: 0%;
+    height: 0;
+}
+
+.height-vh{
+    height: 100vh;
+    overflow-y: hidden;
+}
+
+.color-blue-dark{
+    color:$color-blue-dark;
+}
+
+.color-orange-dark{
+    color:$color-orange-dark;
+}
+
+.color-bg-blue{
+    background-color: $color-blue-dark;
+}
+
+.color-bg-orange{
+    background-color: $color-orange-dark;
+}
+
+.color-bg-grey{
+    background-color: $color-secondary-dark;
+}
